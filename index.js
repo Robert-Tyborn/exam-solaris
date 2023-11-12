@@ -1,5 +1,3 @@
-
-
 const sun = document.getElementById('sun-el');
 const mercury = document.getElementById('mercury-el');
 const venus = document.getElementById('venus-el');
@@ -75,13 +73,10 @@ async function fetchData() {
     } else {
       console.error("Error fetching data:", resp.status);
       return [];
-      console.log()
     }
   };
   
   let planetsData = [];
-  console.log(planetsData)
-
   
   fetchData()
     .then(data => {
@@ -91,11 +86,8 @@ async function fetchData() {
       console.error("Error fetching data:", error);
     });
   
-
   function showModal(planetInfo) {
       let planet = planetsData[planetInfo];
-      console.log(planetsData)
-      console.log(planet)
       modalName.textContent = planet.name;
       modalNameLatin.textContent = planet.latinName + ' (latin)';
       modalInfo.textContent = planet.desc;
