@@ -77,14 +77,37 @@ async function fetchData() {
       return [];
       console.log()
     }
-  }
+  };
   
   let planetsData = [];
   console.log(planetsData)
 
+  
+  fetchData()
+    .then(data => {
+      planetsData = data.bodies;
+    })
+    .catch(error => {
+      console.error("Error fetching data:", error);
+    });
+  
 
-
-
-
-
-
+  function showModal(planetInfo) {
+      let planet = planetsData[planetInfo];
+      console.log(planetsData)
+      console.log(planet)
+      modalName.textContent = planet.name;
+      modalNameLatin.textContent = planet.latinName + ' (latin)';
+      modalInfo.textContent = planet.desc;
+      modalCircumferenceTitle.textContent = 'OMKRETS';
+      modalCircumferenceInfo.textContent = planet.circumference + ' km';
+      modalDistansSunTitle.textContent = 'KM FRÅN SOLEN';
+      modalDistansSunInfo.textContent = planet.distance + ' km';
+      modalTempMaxTitle.textContent = 'MAX TEMPERATUR (dag)';
+      modalTempMaxInfo.textContent = planet.temp.day + 'C';
+      modalTempMinTitle.textContent = 'MIN TEMPERATUR (natt)'
+      modalTempMinInfo.textContent = planet.temp.night + 'C';
+      modalMoonsTitle.textContent = 'MÅNAR'
+      modalMoonsInfo.textContent = planet.moons;
+      modal.style.display = "block";
+  };
