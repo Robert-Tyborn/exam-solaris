@@ -49,7 +49,6 @@ body {
     background: -webkit-linear-gradient(102deg, rgba(226,148,104,0) 0%, rgba(136,136,136,1) 0%, rgba(49,48,48,1) 100%);
     background: linear-gradient(102deg, rgba(226,148,104,0) 0%, rgba(136,136,136,1) 0%, rgba(49,48,48,1) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#e29468",endColorstr="#313030",GradientType=1);
-    /* background-color: rgba(136, 136, 136, 1); */
     cursor: pointer;
 }
 .venus {
@@ -61,7 +60,6 @@ body {
     background: -webkit-linear-gradient(102deg, rgba(226,148,104,0) 0%, rgba(231,205,205,1) 0%, rgba(104,75,75,1) 100%);
     background: linear-gradient(102deg, rgba(226,148,104,0) 0%, rgba(231,205,205,1) 0%, rgba(104,75,75,1) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#e29468",endColorstr="#684b4b",GradientType=1);
-    /* background-color: rgba(231, 205, 205, 1); */
     cursor: pointer;
 }
  .earth {
@@ -73,7 +71,6 @@ body {
     background: -webkit-linear-gradient(102deg, rgba(226,148,104,0) 0%, rgba(66,142,212,1) 0%, rgba(16,41,64,1) 100%);
     background: linear-gradient(102deg, rgba(226,148,104,0) 0%, rgba(66,142,212,1) 0%, rgba(16,41,64,1) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#e29468",endColorstr="#102940",GradientType=1);
-    /* background-color: rgba(66, 142, 212, 1); */
     cursor: pointer;
  }
  .mars {
@@ -85,7 +82,6 @@ background: -moz-linear-gradient(102deg, rgba(226,148,104,0) 0%, rgba(239,95,95,
 background: -webkit-linear-gradient(102deg, rgba(226,148,104,0) 0%, rgba(239,95,95,1) 0%, rgba(105,28,28,1) 100%);
 background: linear-gradient(102deg, rgba(226,148,104,0) 0%, rgba(239,95,95,1) 0%, rgba(105,28,28,1) 100%);
 filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#e29468",endColorstr="#691c1c",GradientType=1);
-    /* background-color: rgba(239, 95, 95, 1); */
     cursor: pointer;
  }
 .jupiter {
@@ -97,7 +93,6 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#e29468",endCo
     background: -webkit-linear-gradient(270deg, rgba(226,148,104,0) 0%, rgba(172,84,34,1) 0%, rgba(221,146,105,1) 66%);
     background: linear-gradient(270deg, rgba(226,148,104,0) 0%, rgba(172,84,34,1) 0%, rgba(221,146,105,1) 66%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#e29468",endColorstr="#dd9269",GradientType=1);
-    /* background-color: rgba(226, 148, 104, 1); */
     cursor: pointer;
 }
 .saturn-ring {
@@ -117,7 +112,6 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#e29468",endCo
     background: -webkit-linear-gradient(102deg, rgba(226,148,104,0) 0%, rgba(199,170,114,1) 0%, rgba(119,88,28,1) 100%);
     background: linear-gradient(102deg, rgba(226,148,104,0) 0%, rgba(199,170,114,1) 0%, rgba(119,88,28,1) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#e29468",endColorstr="#77581c",GradientType=1);
-    /* background-color: rgba(199, 170, 114, 1); */
     cursor: pointer;
 }
 .uranus {
@@ -129,14 +123,12 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#e29468",endCo
     background: -webkit-linear-gradient(102deg, rgba(226,148,104,0) 0%, rgba(201,212,241,1) 0%, rgba(50,78,151,1) 100%);
     background: linear-gradient(102deg, rgba(226,148,104,0) 0%, rgba(201,212,241,1) 0%, rgba(50,78,151,1) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#e29468",endColorstr="#324e97",GradientType=1);
-    /* background-color: rgba(201, 212, 241, 1); */
     cursor: pointer;
 }
 .neptune {
     width: 132px;
     height: 132px;
     border-radius: 50%;
-    /* background-color: rgba(122, 145, 167, 1); */
     background: rgb(226,148,104);
     background: -moz-linear-gradient(102deg, rgba(226,148,104,0) 0%, rgba(122,145,167,1) 0%, rgba(39,76,110,1) 100%);
     background: -webkit-linear-gradient(102deg, rgba(226,148,104,0) 0%, rgba(122,145,167,1) 0%, rgba(39,76,110,1) 100%);
@@ -156,6 +148,5 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#e29468",endCo
     background-color: rgba(3, 4, 66, 0.826);
     padding: 20px;
     border-radius: 5px;
-    /* border: 1px solid rgba(98, 145, 241, 0.808); */
     color: white;
   }
