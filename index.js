@@ -62,23 +62,25 @@ neptune.addEventListener("click", () => {
 
 const BASE_URL = 'https://n5n3eiyjb0.execute-api.eu-north-1.amazonaws.com/'
 
-// let bodies = [];
-
-// async function getSolarisBodies() {
-//   let resp = await fetch(`${BASE_URL}/bodies`, {
-//     method: "GET",
-//     headers: { "x-zocom": "solaris-1Cqgm3S6nlMechWO" },
-//   });
-
-//   const data = await resp.json()
-//   bodies = data.bodies;
-
-// }
-// getSolarisBodies().then(() => {
-//     console.log(bodies)
-// });
-
-
+async function fetchData() {
+    const resp = await fetch("https://n5n3eiyjb0.execute-api.eu-north-1.amazonaws.com/bodies", {
+      method: "GET",
+      headers: {
+        "x-zocom": "solaris-1Cqgm3S6nlMechWO"
+      }
+    });
+  
+    if (resp.ok) {
+      return resp.json();
+    } else {
+      console.error("Error fetching data:", resp.status);
+      return [];
+      console.log()
+    }
+  }
+  
+  let planetsData = [];
+  console.log(planetsData)
 
 
 

@@ -58,6 +58,7 @@ body {
     width: 28px;
     height: 28px;
     border-radius: 50%;
+    background: rgb(66,142,212);
     background-color: rgba(66, 142, 212, 1);
     cursor: pointer;
  }
@@ -105,7 +106,9 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: rgb(3, 4, 66);
+    background-color: rgba(3, 4, 66, 0.826);
     padding: 20px;
     border-radius: 5px;
+    /* border: 1px solid rgba(98, 145, 241, 0.808); */
+    color: white;
   }
