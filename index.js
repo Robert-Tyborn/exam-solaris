@@ -8,6 +8,8 @@ const saturn = document.getElementById('saturn-el');
 const uranus = document.getElementById('uranus-el');
 const neptune = document.getElementById('neptune-el');
 const modal = document.getElementById('modal-el');
+const closeModal = document.getElementById('close-modal');
+const bodyElem = document.querySelector('body');
 const modalName = document.getElementById('planet-name');
 const modalNameLatin = document.getElementById('planet-name-latin');
 const modalInfo = document.getElementById('planet-info');
@@ -58,10 +60,10 @@ neptune.addEventListener("click", () => {
     showModal(8)
 });
 
-const BASE_URL = 'https://n5n3eiyjb0.execute-api.eu-north-1.amazonaws.com/'
+const BASE_URL = 'https://n5n3eiyjb0.execute-api.eu-north-1.amazonaws.com/';
 
 async function fetchData() {
-    const resp = await fetch("https://n5n3eiyjb0.execute-api.eu-north-1.amazonaws.com/bodies", {
+    const resp = await fetch(`${BASE_URL}/bodies`, {
       method: "GET",
       headers: {
         "x-zocom": "solaris-1Cqgm3S6nlMechWO"
@@ -77,29 +79,40 @@ async function fetchData() {
   };
   
   let planetsData = [];
+  console.log(planetsData);
   
-  fetchData()
-    .then(data => {
-      planetsData = data.bodies;
-    })
-    .catch(error => {
-      console.error("Error fetching data:", error);
-    });
+fetchData()
+.then(data => {
+    planetsData = data.bodies;
+    console.log(planetsData)
+})
+.catch(error => {
+    console.error("Error fetching data:", error);
+});
+
+function showModal(planetInfo) {
+    let planet = planetsData[planetInfo];
+    modalName.textContent = planet.name;
+    modalNameLatin.textContent = planet.latinName + ' (latin)';
+    modalInfo.textContent = planet.desc;
+    modalCircumferenceTitle.textContent = 'OMKRETS';
+    modalCircumferenceInfo.textContent = planet.circumference + ' km';
+    modalDistansSunTitle.textContent = 'KM FRÅN SOLEN';
+    modalDistansSunInfo.textContent = planet.distance + ' km';
+    modalTempMaxTitle.textContent = 'MAX TEMPERATUR (dag)';
+    modalTempMaxInfo.textContent = planet.temp.day + 'C';
+    modalTempMinTitle.textContent = 'MIN TEMPERATUR (natt)'
+    modalTempMinInfo.textContent = planet.temp.night + 'C';
+    modalMoonsTitle.textContent = 'MÅNAR'
+    modalMoonsInfo.textContent = planet.moons;
+    modal.style.display = "block";
+};
+
+closeModal.addEventListener('click', () => {
+    location.reload()
+});
+
+// bodyElem.addEventListener('click', (event) => {
+//     console.log('Du klickade!');
   
-  function showModal(planetInfo) {
-      let planet = planetsData[planetInfo];
-      modalName.textContent = planet.name;
-      modalNameLatin.textContent = planet.latinName + ' (latin)';
-      modalInfo.textContent = planet.desc;
-      modalCircumferenceTitle.textContent = 'OMKRETS';
-      modalCircumferenceInfo.textContent = planet.circumference + ' km';
-      modalDistansSunTitle.textContent = 'KM FRÅN SOLEN';
-      modalDistansSunInfo.textContent = planet.distance + ' km';
-      modalTempMaxTitle.textContent = 'MAX TEMPERATUR (dag)';
-      modalTempMaxInfo.textContent = planet.temp.day + 'C';
-      modalTempMinTitle.textContent = 'MIN TEMPERATUR (natt)'
-      modalTempMinInfo.textContent = planet.temp.night + 'C';
-      modalMoonsTitle.textContent = 'MÅNAR'
-      modalMoonsInfo.textContent = planet.moons;
-      modal.style.display = "block";
-  };
+// })

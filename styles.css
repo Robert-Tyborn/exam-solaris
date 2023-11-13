@@ -139,13 +139,21 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#e29468",endCo
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#e29468",endColorstr="#274c6e",GradientType=1);
     cursor: pointer;
 }
+.modal-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
 .modal {
     display: none;
     position: fixed;
-    width: 40%;
-    height: 60%;
-    top: 50%;
-    left: 50%;
+    width: 1400px;
+    height: 1400px;
+    top: 1000px;
+    left: 53%;
     transform: translate(-50%, -50%);
     /* background-color: rgba(3, 4, 66, 0.566); */
     padding: 20px;
@@ -157,9 +165,70 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#e29468",endCo
     background: linear-gradient(90deg, rgba(6,20,143,1) 0%, rgba(0,0,0,1) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#06148f",endColorstr="#000000",GradientType=1);
   }
-.modal-wrapper {
+.planet-name {
+    color: white;
+    font-size: 120px;
+    align-self: flex-start;
+    margin-top: 0;
+    margin-bottom: 0;
+    text-transform: uppercase;
+}
+.planet-name-latin {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 43px;
+    font-weight: 400;
+    color: rgba(255, 209, 41, 0.899);
+    align-self: flex-start;
+    margin-top: 40px;
+    letter-spacing: 15px;
+    text-transform: uppercase;
+}
+.planet-info {
+    font-size: 30px;
+    font-weight: 300;
+    line-height: 50.6px;
+    margin-bottom: 60px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: rgba(255, 255, 255, 0.722);
+}
+.planets-data {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-items: center;
+    flex-direction: row;
+    width: 1400px;
+    flex-wrap: wrap;
+    align-items:self-start;
+    font-size: 30px;
+    color: rgb(220, 218, 218);
+}
+.circumference-info, .distans-sun-info, .temperature-max-info, .temperature-min-info, .moons-info {
+  color: rgba(255, 255, 255, 0.606);
+}
+.circumference, .distans-sun, .temperature-max, .temperature-min, .moons {
+  width: 700px;
+}
+.moons-info {
+    /* font-size: 0.9vw; */
+    word-wrap: break-word;
+    width: 1200px;
+}
+.line {
+    width: 1400px;
+    height: 1px;
+    background-color: rgba(128, 128, 128, 0.684);
+    align-self: self-start;
+}
+.close-modal {
+    width: 70px;
+    height: 70px;
+    font-size: 40px;
+    border: 0;
+    margin-left: auto;
+    background-color: transparent;
+    color: rgba(255, 255, 255, 0.448);
+}
+.title-button-wrap {
+    width: 1400px;
+    display: flex;
+    flex-direction: row;
+    margin-left: auto;
 }
