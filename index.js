@@ -104,7 +104,7 @@ function showModal(planetInfo) {
     modalTempMinTitle.textContent = 'MIN TEMPERATUR (natt)'
     modalTempMinInfo.textContent = planet.temp.night + 'C';
     modalMoonsTitle.textContent = 'MÅNAR'
-    modalMoonsInfo.textContent = planet.moons;
+    modalMoonsInfo.textContent = planet.moons.join(", ");
     modal.style.display = "block";
 };
 

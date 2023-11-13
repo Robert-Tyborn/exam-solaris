@@ -1,3 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:wght@200&family=Roboto+Condensed:wght@300&family=Work+Sans:ital,wght@0,300;0,700;1,300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:wght@200&family=Lora&family=Roboto+Condensed:wght@300&family=Secular+One&family=Work+Sans:ital,wght@0,300;0,700;1,300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:wght@200&family=Roboto+Condensed:wght@300&family=Secular+One&family=Work+Sans:ital,wght@0,300;0,700;1,300&display=swap");
+
 body {
     width: 100vw;
     height: 100vh;
@@ -17,14 +21,14 @@ body {
     color: rgba(255, 255, 255, 0.966);
     font-size: 90px;
     margin-bottom: 0;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: Secular one;
 }
 .page-sub-title {
     color: rgba(255, 209, 41, 0.899);
     font-size: 34px;
     font-weight: 400;
     margin-bottom: 0;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: lora;
 }
 .planets-wrapper {
     display: flex;
@@ -174,14 +178,15 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#e29468",endCo
     margin-top: 0;
     margin-bottom: 0;
     text-transform: uppercase;
+    font-family: Secular One;
 }
 .planet-name-latin {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: Lora;
     font-size: 43px;
     font-weight: 400;
     color: rgba(255, 209, 41, 0.899);
     align-self: flex-start;
-    margin-top: 40px;
+    margin-top: 20px;
     letter-spacing: 15px;
     text-transform: uppercase;
 }
@@ -202,8 +207,12 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#e29468",endCo
     font-size: 30px;
     color: rgb(220, 218, 218);
 }
+.circumference-title, .distans-sun-title, .temperature-max-title, .temperature-min-title, .moons-title {
+    font-family: Secular One;
+}
 .circumference-info, .distans-sun-info, .temperature-max-info, .temperature-min-info, .moons-info {
   color: rgba(255, 255, 255, 0.606);
+  font-family: Roboto Condensed;
 }
 .circumference, .distans-sun, .temperature-max, .temperature-min, .moons {
   width: 700px;
@@ -227,10 +236,12 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#e29468",endCo
     margin-left: auto;
     background-color: transparent;
     color: rgba(255, 255, 255, 0.448);
+    cursor: pointer;
 }
 .title-button-wrap {
     width: 1400px;
     display: flex;
     flex-direction: row;
     margin-left: auto;
+    
 }
