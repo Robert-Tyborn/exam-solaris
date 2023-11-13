@@ -61,12 +61,32 @@ neptune.addEventListener("click", () => {
 });
 
 const BASE_URL = 'https://n5n3eiyjb0.execute-api.eu-north-1.amazonaws.com/';
+// let apiKey = fetchApiKey();
+// console.log(apiKey);
+
+// async function fetchApiKey() {
+//     const url = `${BASE_URL}keys`;
+//     try {
+//       const resp = await fetch(url, {
+//         method: "POST",
+//       });
+  
+//       if (resp.ok) {
+//         const data = await resp.json();
+//         return data.key;
+//       } else {
+//         console.error("Error:", resp.status);
+//       }
+//     } catch (error) {
+//       console.error("Error fetching key:", error);
+//     }
+//   };
 
 async function fetchData() {
     const resp = await fetch(`${BASE_URL}/bodies`, {
       method: "GET",
       headers: {
-        "x-zocom": "solaris-1Cqgm3S6nlMechWO"
+        "x-zocom": "solaris-1Cqgm3S6nlMechWO" 
       }
     });
   
@@ -78,8 +98,7 @@ async function fetchData() {
     }
   };
   
-  let planetsData = [];
-  console.log(planetsData);
+
   
 fetchData()
 .then(data => {
@@ -106,6 +125,7 @@ function showModal(planetInfo) {
     modalMoonsTitle.textContent = 'MÅNAR'
     modalMoonsInfo.textContent = planet.moons.join(", ");
     modal.style.display = "block";
+    console.log(planet)
 };
 
 closeModal.addEventListener('click', () => {
