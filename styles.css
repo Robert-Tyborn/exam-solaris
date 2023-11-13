@@ -16,12 +16,14 @@ body {
 .page-title {
     color: rgba(255, 255, 255, 0.966);
     font-size: 90px;
+    margin-bottom: 0;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 .page-sub-title {
     color: rgba(255, 209, 41, 0.899);
     font-size: 34px;
     font-weight: 400;
+    margin-bottom: 0;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 .planets-wrapper {
