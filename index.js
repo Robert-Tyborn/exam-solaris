@@ -63,7 +63,7 @@ const BASE_URL = 'https://n5n3eiyjb0.execute-api.eu-north-1.amazonaws.com/';
 //   console.error("Error fetching key:", error);
 // });
 
-//Fetches an API KEY
+//Fetches an API KEYΩΩΩΩΩΩΩΩΩ
 // async function fetchApiKey() {
 //   const url = `${BASE_URL}keys`;
 //   try {
@@ -145,3 +145,4 @@ function closeModalOnEscape(event) {
       modal.style.display = "none";
     };
   };
+ 
