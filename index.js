@@ -98,7 +98,7 @@ async function fetchData() {
     }
   };
   
-
+let planetsData = [];
   
 fetchData()
 .then(data => {
@@ -126,13 +126,19 @@ function showModal(planetInfo) {
     modalMoonsInfo.textContent = planet.moons.join(", ");
     modal.style.display = "block";
     console.log(planet)
+    document.addEventListener("keydown", closeModalOnEscape);
 };
 
 closeModal.addEventListener('click', () => {
-    location.reload()
+     modal.style.display = 'none';
 });
 
-// bodyElem.addEventListener('click', (event) => {
-//     console.log('Du klickade!');
-  
-// })
+bodyElem.addEventListener('dblclick', (event) => {
+    modal.style.display = 'none';
+})
+
+function closeModalOnEscape(event) {
+    if (event.key === "Escape") {
+      modal.style.display = "none";
+    }
+  }
