@@ -22,6 +22,7 @@ body {
     font-size: 90px;
     margin-bottom: 0;
     font-family: Secular one;
+    letter-spacing: 7px;
 }
 .page-sub-title {
     color: rgba(255, 209, 41, 0.899);
@@ -29,6 +30,7 @@ body {
     font-weight: 400;
     margin-bottom: 0;
     font-family: lora;
+    letter-spacing: 7px;
 }
 .planets-wrapper {
     display: flex;
@@ -83,10 +85,10 @@ body {
     height: 28px;
     border-radius: 50%;
     background: rgb(226,148,104);
-background: -moz-linear-gradient(102deg, rgba(226,148,104,0) 0%, rgba(239,95,95,1) 0%, rgba(105,28,28,1) 100%);
-background: -webkit-linear-gradient(102deg, rgba(226,148,104,0) 0%, rgba(239,95,95,1) 0%, rgba(105,28,28,1) 100%);
-background: linear-gradient(102deg, rgba(226,148,104,0) 0%, rgba(239,95,95,1) 0%, rgba(105,28,28,1) 100%);
-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#e29468",endColorstr="#691c1c",GradientType=1);
+    background: -moz-linear-gradient(102deg, rgba(226,148,104,0) 0%, rgba(239,95,95,1) 0%, rgba(105,28,28,1) 100%);
+    background: -webkit-linear-gradient(102deg, rgba(226,148,104,0) 0%, rgba(239,95,95,1) 0%, rgba(105,28,28,1) 100%);
+    background: linear-gradient(102deg, rgba(226,148,104,0) 0%, rgba(239,95,95,1) 0%, rgba(105,28,28,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#e29468",endColorstr="#691c1c",GradientType=1);
     cursor: pointer;
  }
 .jupiter {
@@ -99,19 +101,22 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#e29468",endCo
     background: linear-gradient(102deg, rgba(226,148,104,0) 0%, rgba(226,148,104,1) 0%, rgba(101,68,49,1) 91%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#e29468",endColorstr="#654431",GradientType=1); cursor: pointer;
 }
+.saturn-wrapper {
+    transform: translateX(70px);
+}
 .saturn-ring {
-    width: 400px;
-    height: 12px;
+    width: 450px;
+    height: 11px;
     border-radius: 50%;
     background-color: rgba(235, 229, 229, 0.408);
-    transform: translateY(-150px) translateX(-54px) rotate(-35deg);
+    transform: translateY(-150px) translateX(-70px) rotate(-35deg);
 }
 .saturn-ring-second {
     width: 400px;
     height: 12px;
     border-radius: 50%;
     background-color: rgba(114, 110, 110, 0.488);
-    transform: translateY(-158px) translateX(-53px) rotate(-35deg);
+    transform: translateY(-150px) translateX(-53px) rotate(-35deg);
 }
 .saturn {
     width: 288px;
@@ -151,7 +156,6 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#e29468",endCo
     align-items: center;
     justify-items: center;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-
 }
 .modal {
     display: none;
@@ -161,7 +165,6 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#e29468",endCo
     top: 1000px;
     left: 53%;
     transform: translate(-50%, -50%);
-    /* background-color: rgba(3, 4, 66, 0.566); */
     padding: 20px;
     border-radius: 5px;
     color: white;
@@ -179,6 +182,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#e29468",endCo
     margin-bottom: 0;
     text-transform: uppercase;
     font-family: Secular One;
+    letter-spacing: 7px;
 }
 .planet-name-latin {
     font-family: Lora;
@@ -186,9 +190,10 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#e29468",endCo
     font-weight: 400;
     color: rgba(255, 209, 41, 0.899);
     align-self: flex-start;
-    margin-top: 20px;
+    margin-top: 5px;
     letter-spacing: 15px;
     text-transform: uppercase;
+    letter-spacing: 7px;
 }
 .planet-info {
     font-size: 30px;
@@ -207,22 +212,25 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#e29468",endCo
     font-size: 30px;
     color: rgb(220, 218, 218);
 }
-.circumference-title, .distans-sun-title, .temperature-max-title, .temperature-min-title, .moons-title {
+.circumference-title, .distance-sun-title, .temperature-max-title, .temperature-min-title, .moons-title {
     font-family: Secular One;
+    letter-spacing: 3px;
+    margin-bottom: 0;
 }
-.circumference-info, .distans-sun-info, .temperature-max-info, .temperature-min-info, .moons-info {
-  color: rgba(255, 255, 255, 0.606);
-  font-family: Roboto Condensed;
+.circumference-info, .distance-sun-info, .temperature-max-info, .temperature-min-info, .moons-info {
+    color: rgba(255, 255, 255, 0.606);
+    font-family: Roboto Condensed;
+    letter-spacing: 3px;
+    margin-top: 6px;
 }
-.circumference, .distans-sun, .temperature-max, .temperature-min, .moons {
-  width: 700px;
+.circumference, .distance-sun, .temperature-max, .temperature-min, .moons {
+    width: 700px;
 }
 .moons-info {
-    /* font-size: 0.9vw; */
     word-wrap: break-word;
     width: 1200px;
 }
-.line {
+.modal-line {
     width: 1400px;
     height: 1px;
     background-color: rgba(128, 128, 128, 0.684);
