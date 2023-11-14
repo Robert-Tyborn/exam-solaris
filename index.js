@@ -53,34 +53,39 @@ neptune.addEventListener("click", () => {
 });
 
 const BASE_URL = 'https://n5n3eiyjb0.execute-api.eu-north-1.amazonaws.com/';
-// let apiKey = fetchApiKey();
-// console.log(apiKey);
+// let apiKey;
 
-//Fetches an API KEY and save it in a variable
+//Start fetch API KEY and save it in a variable
+// fetchApiKey().then(key => {
+//   apiKey = key;
+//   console.log(apiKey);
+// }).catch(error => {
+//   console.error("Error fetching key:", error);
+// });
+
+//Fetches an API KEY
 // async function fetchApiKey() {
-//     const url = `${BASE_URL}keys`;
-//     try {
-//       const resp = await fetch(url, {
-//         method: "POST",
-//       });
-  
-//       if (resp.ok) {
-//         const data = await resp.json();
-//         return data.key;
-//       } else {
-//         console.error("Error:", resp.status);
-//       }
-//     } catch (error) {
-//       console.error("Error fetching key:", error);
+//   const url = `${BASE_URL}keys`;
+//   try {
+//     const resp = await fetch(url, { method: "POST" });
+//     if (resp.ok) {
+//       const data = await resp.json();
+//       return data.key;
+//     } else {
+//       console.error("Error:", resp.status);
 //     }
-//   };
+//   } catch (error) {
+//     console.error("Error fetching key:", error);
+//   }
+// };
 
 //Fetches data from the API using the API KEY and URL, returns data in a json
 async function fetchData() {
+  
     const resp = await fetch(`${BASE_URL}/bodies`, {
       method: "GET",
       headers: {
-        "x-zocom": "solaris-1Cqgm3S6nlMechWO" 
+        "x-zocom": "solaris-1Cqgm3S6nlMechWO"
       }
     });
   
@@ -117,7 +122,7 @@ function showModal(planetInfo) {
     modalTempMaxInfo.textContent = planet.temp.day + 'C';
     modalTempMinTitle.textContent = 'MIN TEMPERATUR (natt)'
     modalTempMinInfo.textContent = planet.temp.night + 'C';
-    modalMoonsTitle.textContent = 'MÅNAR'
+    modalMoonsTitle.textContent = 'MÅNAR';
     modalMoonsInfo.textContent = planet.moons.join(", ");
     modal.style.display = "block";
     document.addEventListener("keydown", closeModalOnEscape);
