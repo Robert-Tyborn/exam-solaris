@@ -25,67 +25,66 @@ const modalMoonsTitle = document.getElementById('moons-title');
 const modalMoonsInfo = document.getElementById('moons-info');
 
 sun.addEventListener("click", () => {
-    showModal(0)
+    fetchDataAndShowModal(0);
 });
 mercury.addEventListener("click", () => {
-    showModal(1)
+    fetchDataAndShowModal(1);
 });
 venus.addEventListener("click", () => {
-    showModal(2)
+    fetchDataAndShowModal(2);
 });
 earth.addEventListener("click", () => {
-    showModal(3)
+    fetchDataAndShowModal(3);
 });
 mars.addEventListener("click", () => {
-    showModal(4)
+    fetchDataAndShowModal(4);
 });
 jupiter.addEventListener("click", () => {
-    showModal(5)
+    fetchDataAndShowModal(5);
 });
 saturn.addEventListener("click", () => {
-    showModal(6)
+    fetchDataAndShowModal(6);
 });
 uranus.addEventListener("click", () => {
-    showModal(7)
+    fetchDataAndShowModal(7);
 });
 neptune.addEventListener("click", () => {
-    showModal(8)
+    fetchDataAndShowModal(8);
 });
 
 const BASE_URL = 'https://n5n3eiyjb0.execute-api.eu-north-1.amazonaws.com/';
-// let apiKey;
 
-//Start fetch API KEY and save it in a variable
-// fetchApiKey().then(key => {
-//   apiKey = key;
-//   console.log(apiKey);
-// }).catch(error => {
-//   console.error("Error fetching key:", error);
-// });
+//Calls fetchApiKey function and declares variable apiKey 
+fetchApiKey().then(key => {
+  apiKey = key;
+  console.log("Got API key: " + apiKey);
+}).catch(error => {
+  console.error("Error fetching key:", error);
+});
 
-//Fetches an API KEYΩΩΩΩΩΩΩΩΩ
-// async function fetchApiKey() {
-//   const url = `${BASE_URL}keys`;
-//   try {
-//     const resp = await fetch(url, { method: "POST" });
-//     if (resp.ok) {
-//       const data = await resp.json();
-//       return data.key;
-//     } else {
-//       console.error("Error:", resp.status);
-//     }
-//   } catch (error) {
-//     console.error("Error fetching key:", error);
-//   }
-// };
+//Fetches an API KEY
+async function fetchApiKey() {
+  const url = `${BASE_URL}keys`;
+  try {
+    const resp = await fetch(url, { method: "POST" });
+    if (resp.ok) {
+      const data = await resp.json();
+      return data.key;
+    } else {
+      console.error("Error:", resp.status);
+    }
+  } catch (error) {
+    console.error("Error fetching key:", error);
+  }
+};
 
-//Fetches data from the API using the API KEY and URL, returns data in a json
-async function fetchData() {
-  
+//Fetches data from the API using the API KEY and URL
+async function fetchData(key) {
+    console.log("Reveived API key as parameter: " + key);
     const resp = await fetch(`${BASE_URL}/bodies`, {
       method: "GET",
       headers: {
-        "x-zocom": "solaris-1Cqgm3S6nlMechWO"
+        "x-zocom": key,
       }
     });
   
@@ -96,19 +95,21 @@ async function fetchData() {
       return [];
     }
   };
-  
-let planetsData = [];
  
-//Starts the fetchData function, receives the json response and adds the bodies array to a variable
-fetchData()
-.then(resp => {
-    planetsData = resp.bodies;
-})
-.catch(error => {
-    console.error("Error fetching resp:", error);
-});
-
-//Receives the indexposition of a planet clicked to get data from the object in the array we get from the API, and shows this positions data in the modal
+//On planet click, calls fetchData function and declares variable planetsData with the data returned
+//then calls showModal function using the index parameteer (planetInfo)
+function fetchDataAndShowModal(planetInfo) {
+    fetchData(apiKey)
+        .then(data => {
+            planetsData = data.bodies;
+            showModal(planetInfo);
+        })
+        .catch(error => {
+            console.error("Error fetching data:", error);
+        });
+};
+//Receives the indexposition of a planet clicked to get data from the object in the array we get from the API, 
+//and shows this objects data in the modal
 function showModal(planetInfo) {
     let planet = planetsData[planetInfo];
     modalName.textContent = planet.name;
@@ -126,7 +127,7 @@ function showModal(planetInfo) {
     modalMoonsInfo.textContent = planet.moons.join(", ");
     modal.style.display = "block";
     document.addEventListener("keydown", closeModalOnEscape);
-    console.log(planetsData, planet)
+    console.log(planetsData, planet);
 };
 
 //Closes the modal by clicking the X-button in the modal's top right corner
