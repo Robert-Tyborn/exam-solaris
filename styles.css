@@ -21,7 +21,7 @@ body {
     color: rgba(255, 255, 255, 0.966);
     font-size: 90px;
     margin-bottom: 0;
-    font-family: Secular one;
+    font-family: Secular One;
     letter-spacing: 7px;
 }
 .page-sub-title {
@@ -29,7 +29,7 @@ body {
     font-size: 34px;
     font-weight: 400;
     margin-bottom: 0;
-    font-family: lora;
+    font-family: Lora;
     letter-spacing: 7px;
 }
 .planets-wrapper {
@@ -41,7 +41,7 @@ body {
 .sun {
     height: 1378px; 
     width: 428px; 
-    background-image: url(IMG/Untitled\ \(2\).png);
+    background-image: url(IMG/sun.png);
     background-blend-mode: color-burn;
     background-position-x: -570px;
     background-repeat: no-repeat;

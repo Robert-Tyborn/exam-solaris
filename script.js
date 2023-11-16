@@ -109,7 +109,7 @@ function fetchDataAndShowModal(planetInfo) {
         });
 };
 //Receives the indexposition of a planet clicked to get data from the object in the array we get from the API, 
-//and shows this objects data in the modal
+//and shows this object's data in the modal
 function showModal(planetInfo) {
     let planet = planetsData[planetInfo];
     modalName.textContent = planet.name;
