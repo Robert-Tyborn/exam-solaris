@@ -80,7 +80,7 @@ async function fetchApiKey() {
 
 //Fetches data from the API using the API KEY and URL
 async function fetchData(key) {
-  console.log("Reveived API key as parameter: " + key);
+  console.log("Received API key as parameter: " + key);
   const resp = await fetch(`${BASE_URL}/bodies`, {
     method: "GET",
     headers: {
