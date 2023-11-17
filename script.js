@@ -25,31 +25,31 @@ const modalMoonsTitle = document.getElementById('moons-title');
 const modalMoonsInfo = document.getElementById('moons-info');
 
 sun.addEventListener("click", () => {
-    fetchDataAndShowModal(0);
+  fetchDataAndShowModal(0);
 });
 mercury.addEventListener("click", () => {
-    fetchDataAndShowModal(1);
+  fetchDataAndShowModal(1);
 });
 venus.addEventListener("click", () => {
-    fetchDataAndShowModal(2);
+  fetchDataAndShowModal(2);
 });
 earth.addEventListener("click", () => {
-    fetchDataAndShowModal(3);
+  fetchDataAndShowModal(3);
 });
 mars.addEventListener("click", () => {
-    fetchDataAndShowModal(4);
+  fetchDataAndShowModal(4);
 });
 jupiter.addEventListener("click", () => {
-    fetchDataAndShowModal(5);
+  fetchDataAndShowModal(5);
 });
 saturn.addEventListener("click", () => {
-    fetchDataAndShowModal(6);
+  fetchDataAndShowModal(6);
 });
 uranus.addEventListener("click", () => {
-    fetchDataAndShowModal(7);
+  fetchDataAndShowModal(7);
 });
 neptune.addEventListener("click", () => {
-    fetchDataAndShowModal(8);
+  fetchDataAndShowModal(8);
 });
 
 const BASE_URL = 'https://n5n3eiyjb0.execute-api.eu-north-1.amazonaws.com/';
@@ -80,70 +80,69 @@ async function fetchApiKey() {
 
 //Fetches data from the API using the API KEY and URL
 async function fetchData(key) {
-    console.log("Reveived API key as parameter: " + key);
-    const resp = await fetch(`${BASE_URL}/bodies`, {
-      method: "GET",
-      headers: {
-        "x-zocom": key,
-      }
-    });
-  
-    if (resp.ok) {
-      return resp.json();
-    } else {
-      console.error("Error fetching data:", resp.status);
-      return [];
+  console.log("Reveived API key as parameter: " + key);
+  const resp = await fetch(`${BASE_URL}/bodies`, {
+    method: "GET",
+    headers: {
+      "x-zocom": key,
     }
-  };
- 
+  });
+
+  if (resp.ok) {
+    return resp.json();
+  } else {
+    console.error("Error fetching data:", resp.status);
+    return [];
+  }
+};
+
 //On planet click, calls fetchData function and declares variable planetsData with the data returned
 //then calls showModal function using the index parameteer (planetInfo)
 function fetchDataAndShowModal(planetInfo) {
-    fetchData(apiKey)
-        .then(data => {
-            planetsData = data.bodies;
-            showModal(planetInfo);
-        })
-        .catch(error => {
-            console.error("Error fetching data:", error);
-        });
+  fetchData(apiKey)
+    .then(data => {
+      planetsData = data.bodies;
+      showModal(planetInfo);
+    })
+    .catch(error => {
+      console.error("Error fetching data:", error);
+    });
 };
 //Receives the indexposition of a planet clicked to get data from the object in the array we get from the API, 
 //and shows this object's data in the modal
 function showModal(planetInfo) {
-    let planet = planetsData[planetInfo];
-    modalName.textContent = planet.name;
-    modalNameLatin.textContent = planet.latinName + ' (latin)';
-    modalInfo.textContent = planet.desc;
-    modalCircumferenceTitle.textContent = 'OMKRETS';
-    modalCircumferenceInfo.textContent = planet.circumference + ' km';
-    modalDistanceSunTitle.textContent = 'KM FRÅN SOLEN';
-    modalDistanceSunInfo.textContent = planet.distance + ' km';
-    modalTempMaxTitle.textContent = 'MAX TEMPERATUR (dag)';
-    modalTempMaxInfo.textContent = planet.temp.day + 'C';
-    modalTempMinTitle.textContent = 'MIN TEMPERATUR (natt)'
-    modalTempMinInfo.textContent = planet.temp.night + 'C';
-    modalMoonsTitle.textContent = 'MÅNAR';
-    modalMoonsInfo.textContent = planet.moons.join(", ");
-    modal.style.display = "block";
-    document.addEventListener("keydown", closeModalOnEscape);
-    console.log(planetsData, planet);
+  let planet = planetsData[planetInfo];
+  modalName.textContent = planet.name;
+  modalNameLatin.textContent = planet.latinName + ' (latin)';
+  modalInfo.textContent = planet.desc;
+  modalCircumferenceTitle.textContent = 'OMKRETS';
+  modalCircumferenceInfo.textContent = planet.circumference + ' km';
+  modalDistanceSunTitle.textContent = 'KM FRÅN SOLEN';
+  modalDistanceSunInfo.textContent = planet.distance + ' km';
+  modalTempMaxTitle.textContent = 'MAX TEMPERATUR (dag)';
+  modalTempMaxInfo.textContent = planet.temp.day + 'C';
+  modalTempMinTitle.textContent = 'MIN TEMPERATUR (natt)'
+  modalTempMinInfo.textContent = planet.temp.night + 'C';
+  modalMoonsTitle.textContent = 'MÅNAR';
+  modalMoonsInfo.textContent = planet.moons.join(", ");
+  modal.style.display = "block";
+  document.addEventListener("keydown", closeModalOnEscape);
+  console.log(planetsData, planet);
 };
 
 //Closes the modal by clicking the X-button in the modal's top right corner
 closeModal.addEventListener('click', () => {
-     modal.style.display = 'none';
+  modal.style.display = 'none';
 });
 
 //Closes the modal using double click from the mouse anywhere in the screen
 bodyElem.addEventListener('dblclick', (event) => {
-    modal.style.display = 'none';
+  modal.style.display = 'none';
 });
 
 //Closes the modal using input from the ESC and SPACE buttons
 function closeModalOnEscape(event) {
-    if (event.key === "Escape" || event.key === " ") {
-      modal.style.display = "none";
-    };
+  if (event.key === "Escape" || event.key === " ") {
+    modal.style.display = "none";
   };
- 
+};
